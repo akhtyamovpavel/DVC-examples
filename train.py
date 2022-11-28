@@ -8,6 +8,7 @@ import torch.nn as nn
 from torchvision import transforms
 from torchvision.datasets import CIFAR10
 from torch.utils.data import DataLoader
+import os
 
 
 device = 'cuda:0'
@@ -38,6 +39,8 @@ softmax = nn.Softmax(dim=1)
 
 device = 'cuda:0'
 num_epochs = config['hyperparams']['num_epochs']
+os.makedirs('checkpoints', exist_ok=True)
+
 
 for epoch_num in range(num_epochs):
     accumulator = Accumulator()
@@ -82,6 +85,8 @@ for epoch_num in range(num_epochs):
                 y_pred=class_labels.cpu().numpy()
             )
             accuracy_accumulator.append(accuracy, batch_size)
+
+    torch.save(lenet.state_dict(), f'checkpoints/{epoch_num}.pt')
 
     print(epoch_num, 'val', val_accumulator.get())
     print(epoch_num, 'accuracy', accuracy_accumulator.get())

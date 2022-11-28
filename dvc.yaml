@@ -16,3 +16,5 @@ stages:
     - hyperparams.num_epochs
     metrics:
     - metrics.json
+    outs:
+    - checkpoints
