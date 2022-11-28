@@ -10,6 +10,9 @@ stages:
     deps:
     - datasets/cifar10
     - train.py
+    - net.py
     params:
     - dataset.batch_size
     - hyperparams.num_epochs
+    metrics:
+    - metrics.json

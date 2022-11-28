@@ -1,3 +1,4 @@
+import json
 from sklearn.metrics import accuracy_score
 import torch
 import yaml
@@ -84,3 +85,11 @@ for epoch_num in range(num_epochs):
 
     print(epoch_num, 'val', val_accumulator.get())
     print(epoch_num, 'accuracy', accuracy_accumulator.get())
+
+
+with open('metrics.json', 'w') as fp:
+    json.dump({
+        'train_loss': accumulator.get(),
+        'val_loss': val_accumulator.get(),
+        'accuracy': accuracy_accumulator.get()
+    }, fp)

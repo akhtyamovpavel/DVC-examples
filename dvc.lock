@@ -18,10 +18,17 @@ stages:
       md5: e252d2c8ba36d1ab3e21a873ab62daa3.dir
       size: 356712185
       nfiles: 9
+    - path: net.py
+      md5: 37c971952126794cd721b6212e7652b5
+      size: 1311
     - path: train.py
-      md5: c5954301abcecdd783861fa2719c3ac4
-      size: 2448
+      md5: 064f890376a623715d00972b6bd8b1cd
+      size: 2657
     params:
       params.yaml:
-        dataset.batch_size: 128
-        hyperparams.num_epochs: 10
+        dataset.batch_size: 256
+        hyperparams.num_epochs: 3
+    outs:
+    - path: metrics.json
+      md5: 0f5bb16ea724f024189464e9a7c7c2ff
+      size: 86
