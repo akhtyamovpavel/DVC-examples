@@ -26,13 +26,13 @@ stages:
       size: 2777
     params:
       params.yaml:
-        dataset.batch_size: 256
-        hyperparams.num_epochs: 5
+        dataset.batch_size: 512
+        hyperparams.num_epochs: 10
     outs:
     - path: checkpoints
-      md5: a905fefcdf18ea5835d7e84d1b299136.dir
-      size: 1255035
-      nfiles: 5
+      md5: 8f23b2b753242990f75009ee7694ef8b.dir
+      size: 2510070
+      nfiles: 10
     - path: metrics.json
-      md5: a1ce885e37db15d47c529d8511508d57
-      size: 85
+      md5: 093e071f20104da7036f0f91493d0806
+      size: 86
