@@ -27,8 +27,8 @@ stages:
     params:
       params.yaml:
         dataset.batch_size: 256
-        hyperparams.num_epochs: 3
+        hyperparams.num_epochs: 5
     outs:
     - path: metrics.json
-      md5: 0f5bb16ea724f024189464e9a7c7c2ff
+      md5: 3f841d2ec992001dcd224923fd1314c9
       size: 86
