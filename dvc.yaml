@@ -1,0 +1,7 @@
+stages:
+  download_data:
+    cmd: python3 download_data.py
+    deps:
+    - download_data.py
+    outs:
+    - datasets/cifar10
