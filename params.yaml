@@ -1,0 +1,5 @@
+dataset:
+  batch_size: 128
+
+hyperparams:
+  num_epochs: 10

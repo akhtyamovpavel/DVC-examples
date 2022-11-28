@@ -5,3 +5,11 @@ stages:
     - download_data.py
     outs:
     - datasets/cifar10
+  train:
+    cmd: python3 train.py
+    deps:
+    - datasets/cifar10
+    - train.py
+    params:
+    - dataset.batch_size
+    - hyperparams.num_epochs

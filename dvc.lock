@@ -11,3 +11,17 @@ stages:
       md5: e252d2c8ba36d1ab3e21a873ab62daa3.dir
       size: 356712185
       nfiles: 9
+  train:
+    cmd: python3 train.py
+    deps:
+    - path: datasets/cifar10
+      md5: e252d2c8ba36d1ab3e21a873ab62daa3.dir
+      size: 356712185
+      nfiles: 9
+    - path: train.py
+      md5: c5954301abcecdd783861fa2719c3ac4
+      size: 2448
+    params:
+      params.yaml:
+        dataset.batch_size: 128
+        hyperparams.num_epochs: 10
